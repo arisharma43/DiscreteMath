@@ -1,0 +1,88 @@
+\documentclass[]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\usepackage{ragged2e}
+\usepackage{stackengine}
+\usepackage{dirtytalk}
+\usepackage{graphicx}
+\graphicspath{{./Images/}}
+
+
+\hbadness=99999
+
+\date{December 2022}
+\author{ID: 14221}
+\title{Munkres 1.3}
+
+\begin{document}
+
+\maketitle
+
+\begin{enumerate}
+    \item Define two points $(x_0,y_0)$ and $(x_1,y_1)$ of the plane to be equivalent if $y_0-x^2_0=y_1-x^2_1$. Check that this is an equivalence relation and describe the equivalence classes.
+    \\\\ To show that this is an equivalence relation, I will show that it is reflexive, symmetric, and transitive. 
+    \\\\ Reflexive: Using any point $(x,y)$, $y-x^2=y-x^2$ is reflexive since every element in the relation is related to itself.
+    \\\\ Symmetry: If $y_0-x^2_0=y_1-x^2_1$ then $y_1-x^2_1=y_0-x^2_0$ based on how equality is defined as left side will be equal to right side and vice versa.
+    \\\\ Transitive: Use a third point $(x_2,y_2)$. If $(x_0,y_0)$ and $(x_1,y_1)$ are related so $y_0-x^2_0=y_1-x^2_1$ and $(x_1,y_1)$ and $(x_2,y_2)$ are related so $y_1-x^2_1=y_2-x^2_2$. Then, $y_0-x^2_0=y_2-x^2_2$ and is transitive.
+    %to fix:
+    \\\\  Equivalence classes: The points of the plane follow the expression: $\forall_a \forall_b(E(a,b)|y-x^2=b-a^2)$. For example, $E(0,0)=\{(x,y)|y-x^2=0\}$. Therefore, the equivalence classes formed by this relation are the infinitely many parabolas defined by $y=x^2+k$ and shifted up and down on the y-axis with vertex at $x=0$.
+    
+    \item Let $C$ be a relation on a set $A$. If $A_0 \subset A$, define the restriction of $C$ to $A_0$ to be the relation $C \cap (A_0 \times A_0)$. Show that the restriction of an equivalence relation is an equivalence relation.
+    \\\\ $C$ is an equivalence relation. 
+    \\\\ Reflexive: $(x,y) \in C$ and $(x,y) \in A_0$, then we have $(x,x) \in C \cap A_0 \times A_0$ since $x$ is in $A_0$ and in $C$ because $C$ is an equivalence relation.
+    \\\\ Symmetry: $(x,y) \in C \cap (A_0 \times A_0)$. So, $(x,y) \in C$ and then $(y,x) \in C$. Also, $(x,y) \in A_0 \times A_0$ and since $x \in A_0 \land y \in A_0$, $(y,x) \in A_0 \times A_0$. Therefore, $(y,x) \in C \cap (A_0 \times A_0)$.
+    \\\\ Transitive: 
+    \\\\$(x,y) \in C \cap (A_0 \times A_0)$ and $(y,z) \in C \cap (A_0 \times A_0)$.
+    \\\\$(x,y)$ and $(y,z)$ are elements of C.
+    \\\\So $(x,z)$ is in $C$ by transitivity.
+    \\\\$(x,y,z) \in A_0$ so $(x,z)$ is an element of $A_0 \times A_0$.
+    \\\\Therefore, $(x,z) \in C \cap (A_0 \times A_0)$.
+    \\\\ This shows that restriction of an equivalence relation is an equivalence relation.
+    
+    \item Here is a \say{proof} that every relation $C$ that is both symmetric and transitive is also reflexive: \say{Since $C$ is symmetric, $aCb$ implies $bCa$. Since $C$ is transitive, $aCb$ and $bCa$ together imply $aCa$, as desired.} Find the flaw in this argument.
+    \\\\ Reflexivity requires $aCa$ to hold for every $a \in A$.
+    \\\\We can use a counterexample to prove that $C$ isn't reflexive. Using $A=\{0,1,2\}$, and $C=\{(0,0),(0,1),(1,0),(1,1)\}$. Since $(2,2) \notin C$, $C$ isn't reflexive.
+    % \\\\Using points $a,b,c$. If $a \sim b$ and $b \sim c$, $a \sim c$. This shows that if you use transitive, you can prove the relation between $a$ and $c$ but you can't prove the relation between $a$ and $a$.
+    
+    \item Let $f: A \Rightarrow B$ be a surjective function. Let us define a relation on A by setting $a_0 \sim a_1$ if $f(a_0)=f(a_1)$.
+    \\\\a. Show that this is an equivalence relation.
+    \\\\ To show that this is an equivalence relation, I will show that it is reflexive, symmetric, and transitive. 
+    \\\\ Reflexive: $=$ is reflexive. If $a_0 \sim a_0$, $f(a_0)=f(a_0)$. Also, the reverse will be true so $f(a_0)=f(a_0)$ and $a_0 \sim a_0$ will be reflexive.
+    \\\\ Symmetry: $=$ is symmetric. If $a_0 \sim a_1$ $f(a_0)=f(a_1)$ then $f(a_1)=f(a_0)$ and $a_1 \sim a_0$.
+    \\\\ Transitive: Using points $a_0,a_1,a_2$. If $a_0 \sim a_1$ so $f(a_0)=f(a_1)$ and $a_1 \sim a_2$ so $f(a_1)=f(a_2)$. Then, $f(a_0)=f(a_2)$ and $a_0 \sim a_2$ since $=$ is transitive.
+    \\\\b. Let $A^*$ be the set of equivalence classes. Show there is a bijective correspondence of $A^*$ with $B$.
+    \\\\First, define new function $f^*:A^* \Rightarrow B$. To prove that $f^*$ has bijective correspondence we just need to prove that it is surjective and injective.
+    \\\\$f$ was surjective since $a_0 \in A$ and $b_0 \in B$ means that $f(a_0)=b_0$. Similarly, $f^*$ is surjective if $a_0 \in A^*$ and $b_0 \in B$ and $f^*(a_0)=b_0$ for at least one $a_0 \in A^*$. Since $b_0=f(a_0)=f^*(a_0)$, $f^*$ is surjective.
+    \\\\ For any equivalence class $a^*_0 \in A^*$ and element $a_0 \in a^*_0$. Using $f^*(a^*_0)=f^*(a^*_1)$, I will prove that $f^*$ is injective. If $f(a_0)=f(a_1)$ and $a_0 \sim a_1$, $f^*(a^*_0)=f(a_0)$ and $f^*(a^*_1)=f(a_1)$. Since $f(a_0)=f^*(a^*_0)=f^*(a^*_1)=f(a_1)$, $f(a_0)=f(a_1)$. Therefore, since $a_0 \sim a_1$, $a^*_0=a^*_1$. This means that $a_0$ and $a_1$ are in the same equivalence class so that $f^*$ is injective.
+    \item Let $S$ and $S$' be the following subsets of the plane:
+    \\\\ $S=\{(x,y)|y=x+1$ and $0<x<2\}$
+    \newline $S'=\{(x,y)|y-x$ is an integer $\}$
+    \\\\a. Show that $S'$ is an equivalence relation on the real line and $S' \supset S$. Describe the equivalence classes of $S'$.
+    \\\\$S'$ is an equivalence relation on $\mathbb{R}$. Let $x \in \mathbb{R}$. Since $x-x=0 \in \mathbb{Z}$, $(x,x) \in S'$ for all $x$. Thus, $S'$ is reflexive. 
+    \\\\Let $x,y \in \mathbb{R}$. If $y-x \in \mathbb{Z}$, $x-y=-(y-x) \in \mathbb{Z}$. Thus, because $(x,y) \in S'$, $(y,x) \in S'$ and $S'$ is symmetric. 
+    \\\\Let $x,y,z \in \mathbb{R}$. If $y-x \in \mathbb{Z}$ and $z-y \in \mathbb{Z}$ then $z-x=(z-y)-(y-x) \in \mathbb{Z}$. Thus, because $(x,y) \in S' \land (y,x) \in S'$, $(x,z) \in S'$ and $S'$ is transitive.
+    \\\\Next, I will show that $S' \supset S$.
+    \\\\Let $(x,y) \in S$(which means $y=x+1$). Then, $y-x=1 \in \mathbb{Z}$. Thus, $(x,y) \in S'$, and $S' \supset S$. 
+    \\\\Finally, I will describe the equivalence class of $S'$. If $(x,y) \in S'$, then $y-x=a \in \mathbb{Z}$. Then, $y=a+x$. Therefore, $S'' = \{a+x|a \in \mathbb{Z}\}$ is an equivalence class of $S'$.
+    % \\\\ To show that $S'$ is an equivalence relation, I will show that it is reflexive, symmetric, and transitive. 
+    % \\\\ Reflexive: $C$ is relation on $\mathbb{Z}$. Since $(x,y)C(x,y)$ for all $(x,y) \in \mathbb{Z}$, $y-x=y-x$ is reflexive.
+    % \\\\ Symmetry: If $y_0-x_0=y_1-x_1$ then $y_1-x_1=y_0-x_0$ since $(x_0,y_0)$ and $(x_1,y_1)$ are related.
+    % \\\\ Transitive: Use a third point $(x_2,y_2)$. If $(x_0,y_0)$ and $(x_2,y_2)$ are related so $y_0-x_0=y_2-x_2$ and $(x_2,y_2)$ and $(x_1,y_1)$ are related so $y_1-x_1=y_2-x_2$. Then, $y_0-x_0=y_1-x_1$ and is transitive.
+    % \\\\ $S$ can be rewritten so $S=\{(x,y)|y-x=1$ and $0<x<2\}$. In $S$, $y-x=1$ and since $1$ is an integer, $S' \supset S$.
+    % \\\\ The equivalence class of $S'$ is $\mathbb{Z}$.
+    \\\\ b. Show that given any collection of equivalence relations on a set $A$, their intersection is an equivalence relation on $A$.
+    \\\\ Each equivalence relation on a set $A$ partitions $A$ which means that no matter how specific a partition, their elements are all of $A$. \\\\ For example, consider $x_0,x_1 \in \mathbb{R}$ and $x_0,x_1 \in A$ in the following relations: $E_{(x_0)}=\{(x,y)|y-x=x_0\}$, $E_{(x_1)}=\{(x,y)|y=x*x_1\}$. While both equivalence relations have distinct partitions of $A$, they both share intersections such as $x_0,x_1=2$ at $(2,4)$. Even at an intersection, since this intersection occurs between partitions of $A$, an intersection $\in A$.
+    \\\\ Also, if reflexivity, symmetry, and transitivity hold for a relation in the collection, then they hold for any relation in the intersection too. For example, if $xCx$ for any $C \in \mathcal{A}$, then $(x,x) \in C$ for any $C \in \mathcal{A}$, and $(x,x) \in \bigcap_{C \in \mathcal{A}}C$ which means $x \bigcap_{C \in \mathcal{A}}C_x$. This is true for the properties of symmetry and transitivity too.
+    \\\\ c. Describe the equivalence relation $T$ on the real line that is the intersection of all equivalence relations on the real line that contain $S$. Describe the equivalence classes of $T$.
+    \\\\ If $T$ is an equivalence relation that contains $S$, it has to be reflexive, symmetric, and transitive. An equivalence relation that contains $S$ will also have $\{(x,y)|y=x\}$ by reflexivity, $\{(x,y)|y=x+1$ and $0<x<2\}$ and $\{(x,y)|y=x-1$ and $1<x<3\}$ by symmetry, $\{(x,y)|y=x+2$ and $0<x<1\}$ and $\{(x,y)|y=x-2$ and $2<x<3\}$ by transitivity and symmetry. If these pairs are part of $T$, then $T$ is the intersection and from 5b, we know that the intersection of an equivalence relation is an equivalence relation. 
+    \\\\ The equivalence classes of $T$ will be formed based on the sets in the intersection. The equivalence class will be $\{x\}$ for $x \leq 0$ and $x \geq 3$. The classes between $0 \leq x \leq 3$ will be different based on value of $x$.
+    
+    
+    
+\end{enumerate}
+
+
+
+
+\end{document}

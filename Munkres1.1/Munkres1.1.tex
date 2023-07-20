@@ -1,0 +1,195 @@
+\documentclass[]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\usepackage{ragged2e}
+\usepackage{stackengine}
+\usepackage{dirtytalk}
+\usepackage{graphicx}
+% \graphicspath{{./images/}}
+
+
+\hbadness=99999
+
+\date{October 2022}
+\author{ID: 14221}
+\title{Munkres 1.1}
+
+\begin{document}
+
+\maketitle
+
+\begin{enumerate}
+    \item  Check the distributive laws for $\cup$ and $\cap$ and DeMorgan's laws.
+    \newline Consider A, B, and C to be sets. 
+    \newline a. 
+    \newline Proof that $A \cap (B \cup C)=(A\cap B)\cup(A\cap C)$.
+    \\\\$\{x|x \in A\cap(B\cup C)\} \iff \{x|x\in A \land x\in (B \cup C)\}$
+    \newline $\{x|x\in A \land x\in (B \cup C)\} \iff \{x|x \in A \land (x \in B \lor x \in C)\}$
+    \newline $\{x|x \in A \land (x \in B \lor x \in C)\} \iff \{x|(x\in A \land x \in B)\lor(x\in A \land x \in C)\}$
+    \newline $\{x|(x\in A \land x \in B)\lor(x\in A \land x \in C)\} \iff \{x|x \in A \cap B \lor x \in A \cap C\}$
+    \newline $\{x|x \in A \cap B \lor x \in A \cap C\} \iff \{x|x \in (A \cap B) \cup (A \cap C)\}$
+    \\\\b.
+    \newline Proof that $A \cup (B \cap C)=(A \cup B)\cap(A \cup C)$.
+    \\\\$\{x|x \in A \cup (B \cap C)\} \iff \{x|x \in A \lor x \in (B \cap C)\}$
+    \newline $\{x|x \in A \lor x \in (B \cap C)\} \iff \{x|x \in A \lor (x \in B \land x \in C)\}$
+    \newline $\{x|x \in A \lor (x \in B \land x \in C)\} \iff \{x|(x \in A \lor x \in B) \land (x \in A \lor x \in C)\}$
+    \newline $\{x|(x \in A \lor x \in B) \land (x \in A \lor x \in C)\} \iff \{x|x \in A \cup B \land x \in A \cup C\}$
+    \newline $\{x|x \in (A \cup B) \cap (A \cup C)\}$
+    \\\\c.
+    \newline First proof for DeMorgan's law using $A - (B \cup C) = (A - B) \cap (A - C)$.
+    \\\\$\{x|x \in A - (B \cup C)\} \iff \{x|x \in A \land x \notin (B \cup C)\}$
+    \newline $\{x|x \in A \land x \notin (B \cup C)\} \iff \{x|x \in A \land \neg(x \in B \lor x \in C)\}$
+    \newline $\{x|x \in A \land \neg(x \in B \lor x \in C)\} \iff \{x|x \in A \land (x \notin B \land x \notin C)\}$
+    \newline $\{x|x \in A \land (x \notin B \land x \notin C)\} \iff \{x|(x \in A \land x \notin B) \land (x \in A \land x \notin C)\}$
+    \newline $\{x|(x \in A \land x \notin B) \land (x \in A \land x \notin C)\} \iff \{x|x \in (A - B) \land x \in (A - C)\}$
+    \newline $\{x|x \in (A - B) \land x \in (A - C)\} \iff \{x|x \in (A - B) \cap (A - C)\}$
+    \\\\d.
+    \newline Second proof for DeMorgan's law using $A - (B \cap C) = (A - B) \cup (A - C)$
+    \\\\$\{x|x \in A - (B \cap C)\} \iff \{x|x \in A \land x \notin B \cap C\}$
+    \newline $\{x|x \in A \land x \notin B \cap C\} \iff \{x|A \land \neg (x \in B \land x \in C)\}$
+    \newline $\{x|A \land \neg (x \in B \land x \in C)\} \iff \{x|x \in A \land (x \notin B \lor x \notin C)\}$
+    \newline $\{x|x \in A \land (x \notin B \lor x \notin C)\} \iff \{x|(x \in A \land x \notin B) \lor (x \in A \land x \notin C)\}$
+    \newline $\{x|(x \in A \land x \notin B) \lor (x \in A \land x \notin C)\} \iff \{x|x \in (A - B) \lor x \in (A - C)\}$
+    \newline $\{x|x \in (A - B) \lor (A - C)\} \iff \{x|x \in (A - B) \cup (A - C)\}$
+    
+    \item a. $A \subset B$ and $A \subset C \iff A \subset (B \cup C)$
+    \\\\ The double implication fails and $\longrightarrow$ is true and $\longleftarrow$ is false.
+    \newline Proof for $\longrightarrow$:
+    \newline Using $A \subset B$ and $A \subset C$, consider $x \in A$. Then, $x \in B$ since $A \subset B$ so that $x \in B \cup C$. Therefore, $A \subset (B \cup C)$ is true.
+    \\\\ Proof for $\longleftarrow$:
+    \\However, for the converse, consider A = {0,1,2}, B={0,1}, and C={2,3}. Then $A \subset {0,1,2,3} = B \cup C$  but it is false that $A \subset B$ since 2 is in A but not in B and $A \subset C$ is false since 0 is in A but not in C. Thus,$
+    A \subset B and  A \subset C \leftarrow A \subset (B \cup  C) $ does not hold.
+    \\\\e. $A-(A-B)=B$
+    \\\\$A-(A-B) \subset B$ is true but $A-(A-B) \supset B$ is false.
+    \newline Using $x \in A-(A-B)$ and $x \in A$, then $x \notin A-B$. Therefore it is false that $x \in A$ and $x \notin B$. So $x \notin A$ or $x \in B$ is true. So, if $x \in A$, $x \in B$. Thus $A-(A-B) \subset B$. \\However, for $A-(A-B) \supset B$, let $A={0,1}$ and $B={1,2}$. Therefore, $A-B={0}$ and $A-(A-B)={1}$. This means that B is not a subset of $A-(A-B)$ since $2 \in B$ but $2 \notin A-(A-B)$.
+    \\Thus, $A-(A-B)=B$ is false.
+    \\\\i. $(A \cap B) \cup (A-B)=A$
+    \\\\Proof that $(A \cap B) \cup (A-B)=A$ is true.
+    \newline $(A \cap B) \cup (A-B)$
+    \newline $=\{x|(x \in A \land x \in B) \lor (x \in A \land \neg (x \in B))\}$
+   \newline $=\{x|(x \in A \land x \in B \lor x \in A) \land (x \in A \land x \in B \lor \neg (x \in B ))\}$ Distr
+   \newline $=\{x|(x \in A \land x \in A \}$ Simp
+   \newline $=\{x|(x \in A \}$ Rep
+    \newline $=A $
+    \\\\o. $A \times (B-C)=(A \times B)-(A \times C)$
+    \\\\Proof that $A \times (B-C)=(A \times B)-(A \times C)$ is true.
+    \newline $A \times (B-C)$
+    \newline $=\{(x,y)|x \in A \land y\in B \land \neg (y\in C)\}$
+    \newline $=\{(x,y)|x \in A \land y\in B \land \neg (y\in C) \lor \neg (x \in A)\}$ Add
+    \newline $=\{(x,y)|x \in A \land y\in B \land \neg (y\in C \land x \in A)\}$ DeM
+    \newline $=(A \times B)-(A \times C)$ 
+    \newline $Thus,A \times (B-C)=(A \times B)-(A \times C)$ is true.
+    \item a.  Write the contrapositive and converse of the following statement: \say{If $x<0$, then $x^2-x>0$,} and determine which (if any) of the three statements are true.
+    \\\\ Contrapositive: If $x^2-x \leq 0$ then $x \geq 0$
+    \newline Converse: If $x^2-x>0$ then $x<0$
+    \\\\ Original: The original statement is true. Since $x^2-x$ can be rewritten as $x(x-1)$ and $x$ is negative, $x^2-x$ will be positive as the product of two negative numbers is positive.
+    \\\\ Contrapositive: Since the original statement is true, the contrapositive will also be true since it is logically equivalent to the original statement.
+    \\\\ Converse: The converse statement is false. For example, consider the case where x=2. $2^2-2>0$ but $2<0$ is false thus proving that the converse is false.
+    \\\\b. Write the contrapositive and converse of the following statement: \say{If $x>0$, then $x^2-x>0$,} and determine which (if any) of the three statements are true.
+    \\\\ Contrapositive: If $x^2-x \leq 0$ then $x \leq 0$
+    \newline Converse: If $x^2-x>0$ then $x>0$
+    \\\\Original: The original statement is false. For example, consider the case where x=0.2. $0.2$ is positive but $0.2^2-0.2=-0.16$ which is negative. Therefore, the original statement is false.
+    \\\\Contrapositive: Since the contrapositive is logically equivalent to the original statement, the contrapositive will also be false.
+    \\\\Converse: The converse is also false. For example, consider the case where $x=-2$. $-2^2-2>0$ but $-2>0$ is false and thus the converse is false.
+    
+    \item Let $A$ and $B$ be sets of real numbers. Write the negation of each of the following statements:
+    \\\\ a. For every $a \in A$, it is true that $a^2 \in B$.
+    \newline Negation: There is at least one $a \in A$ where $a^2 \notin B$.
+    \\\\ b. For at least one $a \in A$, it is true that $a^2 \in B$.
+    \newline Negation: For every $a \in A$, $a^2 \notin B$.
+    \\\\ c. For every $a \in A$, it is true that $a^2 \notin B$.
+    \newline Negation: There is at least one $a \in A$ where $a^2 \in B$.
+    \\\\ d. For at least one $a \notin A$, it is true that $a^2 \in B$.
+    \newline Negation: For every $a \notin A$, $a^2 \notin B$.
+    
+    \item Let $\alpha$ be a nonempty collection of sets. Determine the truth of each of the following statements and of their converses:
+    \\\\ a. $x \in \bigcup_{A \in \alpha} A \Rightarrow x \in A$ for at least one $A \in \alpha$.
+    \newline The original statement and its converse are true since the statement on the right is the definition of the statement on the left.
+    \\\\b. $x \in \bigcup_{A \in \alpha} A \Rightarrow x \in A$ for every $A \in \alpha$.
+    \newline The original statement is false. For example, consider the case where $\alpha =\{\{0\},\{1\}\}$. Then $\bigcup_{A \in \alpha} A = \{0,1\}$ so that $0 \in \cup_{A \in \alpha}A$, but 0 is not in $\alpha$ for every $A \in \alpha$ since $0 \notin \{1\}$
+    \\\\ The converse is true. Consider the case where $x \in A$ for every $A \in \alpha$. Since $\alpha$ is nonempty, $A_0 \in \alpha$. Then $x \in A_0$ since $A_0 \in \alpha$. Therefore, $x \in \bigcup_{A \in \alpha} A$ is true since $x \in A_0$ and $A_0 \in \alpha$.
+    \\\\c. $x \in \bigcap_{A \in \alpha} \Rightarrow x \in A$ for at least one $A \in \alpha$.
+    \newline The original statement is true. From the definition of $x \in \bigcap_{A \in \alpha}$, $x \in A$ for every $A \in \alpha$. Since $\alpha$ is nonempty, there is an $A_0 \in \alpha$ so that $x \in A_0$. Therefore, $A_0 \in \alpha$.
+    \\\\ The converse is false.
+    \newline Consider the case where $\alpha = \{\{0,1\},\{1,2\}\}$. Then $0 \in \{0,1\}$ and $\{0,1\} \in \alpha$, but $1 \notin \bigcap_{A \in \alpha} \alpha$.
+    \\\\d. $x \in \bigcap_{A \in \alpha} A \Rightarrow x \in A$ for at least one $A \in \alpha$.
+    \newline The original statement and its converse are true since the statement on the right is the definition of the statement on the left.
+    
+    \item Write the contrapositive of each of the statements of Exercise 5.
+    \\\\ a. $x \notin A$ for every $A \in \alpha \Rightarrow x \notin \bigcup_{A \in \alpha}A$
+    \\\\ b. $x \notin A$ for at least one $A \in \alpha \Rightarrow x \notin \bigcup_{A \in \alpha}A$
+    \\\\ c. $x \notin A$ for every $A \in \alpha \Rightarrow x \notin \bigcap_{A \in \alpha}A$
+    \\\\ d. $x \notin A$ for at least one $A \in \alpha \Rightarrow x \notin \bigcap_{A \in 
+    \alpha}A$
+    
+    \item Given sets $A$, $B$, and $C$, express each of the following sets in terms of $A$, $B$, and $C$, using the symbols $\cup$, $\cap$, and $-$.
+    \\\\ $D=A \cap (B \cup C)$
+    \newline $E=(A \cap B) \cup C$
+    \\\\ For F:
+    \newline $x \in F \iff x \in A \land (x \in B \Rightarrow x \in C)$
+    \newline $A \land (x \in B \Rightarrow x \in C) \iff A \land (x \notin B \lor x \in C)$
+    \newline $A \land (x \notin B \lor x \in C) \iff x \in A \land \neg(x \in B \land x \notin C)$
+    \newline $x \in A \land \neg(x \in B \land x \notin C) \iff x \in A \land \neg (x \in B - C)$
+    \newline $x \in A \land \neg (x \in B - C) \iff x \in A \land x \notin B - C$
+    \newline $x \in A \land x \notin B - C \iff x \in A - (B-C)$
+    \newline $F = A-(B-C)$
+    
+    \item If a set $A$ has two elements, show that $\mathcal{P}(A)$ has four elements. How many elements does $\mathcal{P}(A)$ have if $A$ has one element? Three elements? No elements? Why is $\mathcal{P}(A)$ called the power set of $A$?
+    \\\\a. If set $A$ has two elements: $A = \{0,1\}$. $\mathcal{P}(A) = \{\{ \emptyset \},\{0\},\{1\},\{0,1\}\}$ and $\mathcal{P}(A)$ has 4 elements. $A=2$, $\mathcal{P}(A)=2^2=4$.
+    \\\\b. If set $A$ has one element: $A = \{0\}$. $\mathcal{P}(A) = \{\{ \emptyset \},\{0\}\}$ and $\mathcal{P}(A)$ has 2 elements. 
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    $A=1$, $\mathcal{P}(A)=2^1=2$.
+    \\\\c. If set $A$ has three elements: $A = \{0,1,2\}$. $\mathcal{P}(A) = \{\{ \emptyset \},\{ 0 \},\{ 1 \},\{ 2 \}, \{ 0,1 \}, \{ 0,2 \}, \{ 1,2 \}, \{ 0,1,2 \}\}$ and $\mathcal{P}(A)$ has 3 elements. $A=3$, $\mathcal{P}(A)=2^3=8$.
+    \\\\d. If set $A$ has zero elements: $A = \{ \emptyset \}$. $\mathcal{P}(A) = \{\{ \emptyset \}\}$ and $\mathcal{P}(A)$ has 1 elements. $A=0$, $\mathcal{P}(A)=2^0=1$.
+    \\\\e. $\mathcal{P}(A)$ is called the power set of $A$ since $\mathcal{P}(A)=2^{A}$. So the number of elements in $\mathcal{P}(A)$ is 2 to the power of number of elements in $A$.
+    
+    \item Formulate and prove DeMorgan's laws for arbitrary unions and intersections.
+    \\ Given that $A$ is a set and $C$ is a nonempty collection of sets.
+    \\For arbitrary unions:
+    \\ $A - \bigcup_{B \in C}B = \bigcap_{B \in C} (A-B)$
+    \\\\Proof:
+    \\$A - \bigcup_{B \in C}B \iff x \in A \land \neg \exists B \in C(x \in B)$
+    \\$x \in A \land \neg \exists B \in C(x \in B) \iff x \in A \land \forall B \in C(x \notin B)$
+    \\$x \in A \land \forall B \in C(x \notin B) 
+    \iff \forall B \in C(x \in A \land x \notin B)$
+    \\$\forall B \in C(x \in A \land x \notin B) \iff \forall B \in C(x \in A - B)$
+    \\$\forall B \in C(x \in A-B) \iff x \in \bigcap_{B \in C}(A-B)$
+    \\\\For arbitrary intersections:
+    \\ $A - \bigcap_{B \in C}B = \bigcup_{B \in C} (A-B)$
+    \\\\Proof:
+    \\$A - \bigcap_{B \in C}B \iff x \in A \land x \notin \bigcap_{B \in C} B$
+    \\$x \in A \land x \notin \bigcap_{B \in C} B \iff x \in A \land \neg \forall B \in C(x \in B)$
+    \\$x \in A \land \neg \forall B \in C(x \in B) \iff x \in A \land \exists B \in C (x \notin B)$
+    \\$x \in A \land \exists B \in C (x \notin B) \iff \exists B \in C(x \in A - B)$
+    \\$\exists B \in C(x \in A - B) \iff x \in \bigcup_{B \in C}(A-B)$
+    
+    \item Let $\mathbb{R}$ denote the set of real numbers. For each of the following subsets of $\mathbb{R} \times \mathbb{R}$, determine whether it is equal to the Cartesian product of two subsets of $\mathbb{R}$.
+    \\\\a. $\{(x,y)|x$ is an integer$\}$.
+    \\ Equal to $\mathbb{Z} \times \mathbb{R}$
+    \\\\b. $\{(x,y)|0<y \leq 1 \}$.
+    \\ Equal to $\mathbb{R} \times (0,1]$. $(a,b]$ means $\{x \in \mathbb{R}|a<x \leq b\}$.
+    \\\\c. $\{(x,y)|y>x\}$.
+    \\Not equal to Cartesian product of subsets of $\mathbb{R}$
+    \\Suppose that $A = \{ (x,y) | y>x \}$ and $A=B \times C$ where $B, C \in R$. Since $1>0$, $(0,1) \in A$. Then $0 \in B$ and $1 \in C$ since $A = B \times C$. We also have that $1 \in B$ and $1 \in C$ so $(1,1) \in B \times C=A$ but it is false that $1>1$ so there is a contradiction and $A$ isn't $B \times C$.
+    \\\\d. $\{(x,y)|x$ is an integer and $y$ is an integer $\}$.
+    \\ This is equal to $(\mathbb{R}-\mathbb{Z}) \times \mathbb{Z}$
+    \\ The first part proves x cannot be an integer as it is part of a set of real numbers with integer removed. The second part is self-evident.
+    \\\\e. $\{(x,y)|x^2+y^2<1\}$.
+    \\Not equal to Cartesian product of subsets of $\mathbb{R}$.
+        \\Suppose that $A = \{ (x,y) | x^2+y^2<1 \}$ and $A=B \times C$ where $B,C \in \mathbb{R}$. For example, $(8/10)^2+0^2=64/100+0=64/100<1$ so that $(8/10,0) \in A = B \times C$, and thus $8/10 \in B$ and $0 \in C$. Also $0^2 + (8/10)^2 = 64/100<1$ so that $(0, 8/10) \in A=B \times C$, and $0 \in B$ and $8/10 \in C$. Thus $(8/10,8/10) \in B \times C = A$ since $8/10$ is in $B$ and $C$. Since $(8/10)^2+(8/10)^2=64/100 + 64/100 = 128/100 \geq 1$, $(8/10,8/10)$ cannot be in $A$ so there is a contradiction. Therefore, A isn't equal to $B \times C$.
+\end{enumerate}
+
+
+
+
+\end{document}

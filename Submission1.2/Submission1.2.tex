@@ -1,0 +1,377 @@
+\documentclass[]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\usepackage{ragged2e}
+\usepackage{stackengine}
+\usepackage{dirtytalk}
+\usepackage{graphicx}
+% \graphicspath{{./images/}}
+
+
+\hbadness=99999
+
+\date{\today}
+\author{ID: 14221}
+\title{Submission 1.2}
+
+\begin{document}
+
+\maketitle
+
+\begin{enumerate}
+    % \setcounter{enumi}{1}
+    \item Jones, feeling upset about the insecurity of the Social Security system, sighs that he faces a dilemma: “If taxes aren’t raised, I’ll have no money when I’m old. If taxes are raised, I’ll have no money now.” Smith, ever the even-tempered one, reasons that neither of Jones’s contentions is true. Jones answers, “Aha! You’ve contradicted yourself!” Show that Smith’s assertion that both Jones’s claims are false is indeed contradictory.
+    \\\\T: Taxes are raised.
+    \newline O: I'll have no money when I'm old.
+    \newline N: I'll have no money now.
+    \\\\ Claim 1:
+    \\ $\neg T \Rightarrow O$
+    \\ Claim 2:
+    \\ $T \Rightarrow N$
+    \\\\If we presume these claims are false, we get:
+    \\ $ \neg(\neg T \Rightarrow O)$, $\neg (T \Rightarrow N)$
+    \\\\ Proof (Natural Deduction)
+    \begin{tabular}{c| c | c}
+        1 & $ \neg(\neg T \Rightarrow O)$ & P1 \\
+        2 & $\neg (T \Rightarrow N)$ & P2 \\
+        3 & $\neg(T \lor O)$ & CDis(1) \\
+        4 & $\neg(\neg T \lor N)$ & CDis(2) \\
+        5 & $\neg T \land \neg O$ & DeM(3) \\
+        6 & $T \land \neg N$ & DeM(4) \\
+        7 & $\neg T$ & Conj(5) \\
+        8 & $T$ & Conj(6) \\
+        9 & Contradiction & ContraPrm(7,8)
+    \end{tabular}
+    \\\\Since the premises are contradictory, both of Jones' claims cannot be false and therefore Smith's assertion is contradictory.
+    
+    
+    \item Consider the statement: If a fetus is a person, it has a right to life. Which of the following sentences follow from this? (B 26)
+    \newline F:Fetus is a person
+    \newline R:It has a right to life
+    \\ F $\Rightarrow$ R
+    \\\\\textbf{(a)A fetus is a person only if it has a right to life.}
+    \newline Translates to F $\Rightarrow$ R.
+    \newline Same as original statement.
+    \\\\(b) If a fetus isn’t a person, it doesn’t have a right to life.
+    \newline Translates to $\neg F \Rightarrow \neg R$.
+    \newline Doesn't follow because it is a fallacy, denying the antecedent.
+    \\\\ \textbf{(c) If a fetus doesn’t have a right to life, it isn’t a person.}
+    \newline Translates to $\neg R \Rightarrow \neg F$.
+    \newline Follows through Contraposition.
+    \\\\(d) A fetus has a right to life.
+    \newline Translates to $R$.
+    \newline For this statement to follow, you need F as a premise.
+    \\\\(e) A fetus isn’t a person only if it doesn’t have a right to life.
+    \newline Translates to $\neg F \Rightarrow \neg R$.
+    \\Doesn't follow because it is a fallacy, denying the antecedent.
+    
+    
+    
+
+    \item Consider this statement from IRS publication 17: Your Federal Income Tax: If you are single, you must file a return if you had gross income of \$3,560 or more for the year. What follows from this, together with the information listed? (B 26)
+    \newline(a) You are single with an income of \$2,500.
+    \newline(b) You are married with an income of \$2,500.
+    \newline(c) You are single with an income of \$25,000.
+    \newline(d) You are single but do not have to file a return.
+    \newline(e) You are married but do not have to file a return.
+    \\\\S: You're single.
+    \newline F: You must file a return.
+    \newline G: You had gross income of \$3,560 or more for the year.
+    \newline $S \Rightarrow (G\Rightarrow F)$
+    \newline $S \Rightarrow (\neg G \lor F)$, CDis
+    \newline $\neg S \lor \neg G \lor F$, CDis so statement X (any statement) must follow.
+    \\\\(a) $S \land \neg G$ makes X true through $\neg G$. Provides no information about F so we don't know if you must file a return.
+    \\\\(b) $\neg S \land \neg G$ makes X true through $\neg S \land \neg G$. Provides no information about F so we don't know if you must file a return.
+    \\\\(c) $S \land G$ doesn't automatically make X true. F must be true for X to follow, so you must file a tax return.
+    \\\\(d) $S \land \neg F$ does not automatically make X true. Must have $\neg G$ for X to follow, so your gross income will be less than \$3,560.
+    \\\\(e) $\neg S \land \neg F$ satisfies X through $\neg S$ so X is true regardless of G. So we have no information about G or your gross income.
+    
+    \item  I have already said that he must have gone to King’s Pyland or to Mapleton. He is not at King’s Pyland, therefore he is at Mapleton
+    \newline a.
+    \newline K: He's at King's Pyland
+    \newline M: He's at Mapleton
+    \\\\ K $\lor$ M
+    \newline $\neg$ K
+    \newline ---
+    \newline M
+    \\\\ Proof (Natural Deduction)
+    \begin{tabular}{c| c | c}
+        1 & $K \lor M$ & P1 \\
+        2 & $\neg K$ & P2 \\
+        3 & $M$ & DS(1,2) \\
+    \end{tabular}
+    
+    \item a.
+    \newline R: I'm right
+    \newline F: I'm a fool
+    \\\\ R $\Rightarrow$ F
+    \newline F $\Rightarrow \neg$ R
+    \newline ---
+    \newline $\neg$ R
+    \\\\ Proof (Natural Deduction)
+    \begin{tabular}{c| c | c}
+        1 & $R \Rightarrow F$ & P1 \\
+        2 & $F \Rightarrow \neg R$ & P2 \\
+        3 & $R \Rightarrow \neg R$ & HS(1,2) \\
+        4 & $\neg R \lor \neg R$ & CDis(3) \\
+        5 & $\neg R$ & Rep(4) \\
+    \end{tabular}
+    
+    \item Congress will agree to the cut only if the President announces his support first. The President won’t announce his support first, so Congress won’t agree to the cut.
+    \newline C: Congress will agree to the cut
+    \newline P: The President will announce his support first
+    \\\\ C $\Rightarrow$ P
+    \newline $\neg$ P
+    \newline ---
+    \newline $\neg$ C
+    \\\\ Proof (Natural Deduction)
+    \begin{tabular}{c| c | c}
+        1 & $C \Rightarrow P$ & P1 \\
+        2 & $\neg P$ & P2 \\
+        3 & $\neg C \lor P$ & CDis(1) \\
+        4 & $\neg C$ & DS(2,3) \\
+    \end{tabular}
+
+    \item If you are ambitious, you’ll never achieve all your goals. But life has meaning only if you have ambition. Thus, if you achieve all your goals, life has no meaning.
+    \newline A: You are ambitious
+    \newline G: You achieve all your goals
+    \newline M: Life has meaning
+    \\\\ A $\Rightarrow \neg$ G
+    \newline M $\Rightarrow$ A
+    \newline ---------------\hspace{3mm} Is valid
+    \newline G $\Rightarrow \neg$ M
+    \\\\ Proof (Natural Deduction)
+    \begin{tabular}{c| c | c}
+        1 & $A \Rightarrow \neg G$ & P1 \\
+        2 & $M \Rightarrow A$ & P2 \\
+        3 & $M \Rightarrow \neg G$ & HS(2,1) \\
+        4 & $G \Rightarrow \neg M$ & ContraPos(3) \\
+    \end{tabular}
+    
+    \item Mittens meows exactly when she is hungry. Mittens is meowing, but she isn't hungry. Therefore the end of the Earth is at hand. 
+    \\a.
+    \newline M: Mittens meows
+    \newline H: She is hungry
+    \newline E: The end of the Earth is at hand 
+    \\\\ M $\iff$ H
+    \newline M $\land \neg$ H
+    \newline ---
+    \newline E
+    \\\\ Proof (Natural Deduction)
+    \begin{tabular}{c| c | c}
+        1 & $M \iff H$ & P1 \\
+        2 & $M \land \neg H$ & P2 \\
+        3 & $(M \Rightarrow H)\land(H \Rightarrow M)$ & Equiv(1) \\
+        4 & $M \Rightarrow H$ & Simp(3) \\
+        5 & $\neg M \lor H$ & CDis(4) \\
+        6 & $\neg M \lor \neg \neg H$ & DN(5) \\
+        7 & $\neg (M \land \neg H)$ & DeM(6) \\
+        8 & $E$ & ContraPrm(2,7) \\
+    \end{tabular}
+    
+    \item  God is omnipotent if and only if he can do everything. If he can’t make a stone so heavy that He can’t lift it, then he can’t do everything. But if he can make a stone so heavy that he can’t lift it, he can’t do everything. Therefore, either God is not omnipotent or God does not exist.
+    \newline S: He can make a stone so heavy that He can't lift it
+    \newline E: He can do everything
+    \newline O: God is omnipotent
+    \newline D: God doesn't exist
+    \\\\ O $\iff$ E
+    \newline $\neg$ S $\Rightarrow \neg$ E
+    \newline S $\Rightarrow \neg$ E
+    \newline ---
+    \newline $\neg$ O $\lor$ D
+    \\\\ Proof (Natural Deduction)
+    \begin{tabular}{c| c | c}
+        1 & $O \iff E$ & P1 \\
+        2 & $\neg S \Rightarrow \neg E$ & P2 \\
+        3 & $S \Rightarrow \neg E$ & P3 \\
+        4 & $S \lor \neg S$ & Taut(2,3) \\
+        5 & $\neg E \lor \neg E$ & CD(4,3,2) \\
+        6 & $\neg E$ & Rep(5) \\
+        7 & $(O \Rightarrow E)\land(E\Rightarrow O)$ & Equiv(1) \\
+        8 & $O \Rightarrow E$ & Simp(7) \\
+        9 & $\neg E \Rightarrow \neg O$ & ContraPos(8) \\
+        10 & $\neg O$ & MP(9) \\
+        11 & $\neg O \lor D$ & Add(10) \\
+    \end{tabular}
+    
+    % \\\\ Proof (Natural Deduction)
+    % \\ 1. $O \iff E$ \hspace{3mm} P1
+    % \newline2. $\neg S \Rightarrow \neg E$ \hspace{3mm} P2
+    % \newline3. $S \Rightarrow \neg E$ \hspace{3mm} P3
+    % \newline4. $S \lor \neg S$ \hspace{3mm} Taut(2,3)
+    % \newline5. $\neg E \lor \neg E$ \hspace{3mm} CD(4,3,2)
+    % \newline6. $\neg E$ \hspace{3mm} Rep(5)
+    % \newline7. $(O \Rightarrow E) \land (E \Rightarrow O)$ \hspace{3mm} Equiv(1)
+    % \newline8. $O \Rightarrow E$ \hspace{3mm} Simp(7)
+    % \newline9. $\neg E \Rightarrow \neg O$ \hspace{3mm} ContraPos(8)
+    % \newline10. $\neg O$ \hspace{3mm} MP(9)
+    % \newline11. $\neg O \lor D$ \hspace{3mm} Add(10)
+    
+
+    
+    \item A two-place connective, $\circ$, is called \emph{associative} if $(A \circ B)\circ C$ is logically equivalent to $A \circ (B \circ C)$. Which of $\land, \lor, \Rightarrow, \iff$ are associative?
+    \newline
+    \begin{displaymath}
+    \begin{array}{|c c c||c|c|}
+    A & B & C & (A \land B)\land C & A \land (B \land C)\\
+    \hline
+    T & T & T & T & T\\
+    T & F & T & F & F\\
+    F & T & T & F & F\\
+    F & F & T & F & F\\
+    T & T & F & F & F\\
+    T & F & F & F & F\\
+    F & T & F & F & F\\
+    F & F & F & F & F\\
+    \end{array}
+    \end{displaymath}
+    \newline $\land$ is associative because it is logically equivalent on all lines of the truth table for $(A \land B)\land C$ and $A \land (B \land C)$
+    \newline
+    \begin{displaymath}
+    \begin{array}{|c c c||c|c|}
+    A & B & C & (A \lor B)\lor C & A \lor (B \lor C)\\
+    \hline
+    T & T & T & T & T\\
+    T & F & T & T & T\\
+    F & T & T & T & T\\
+    F & F & T & T & T\\
+    T & T & F & T & T\\
+    T & F & F & T & T\\
+    F & T & F & T & T\\
+    F & F & F & F & F\\
+    \end{array}
+    \end{displaymath}
+    \newline $\lor$ is associative because it is logically equivalent on all lines of the truth table for $(A \lor B)\lor C$ and $A \lor (B \lor C)$
+    \newline
+    \begin{displaymath}
+    \begin{array}{|c c c||c|c|}
+    A & B & C & (A \Rightarrow B)\Rightarrow C & A \Rightarrow (B \Rightarrow C)\\
+    \hline
+    T & T & T & T & T\\
+    T & F & T & T & T\\
+    F & T & T & T & T\\
+    F & F & T & T & T\\
+    T & T & F & F & F\\
+    T & F & F & T & T\\
+    F & T & F & F & T\\
+    F & F & F & F & T\\
+    \end{array}
+    \end{displaymath}
+    \newline $\Rightarrow$ isn't associative because it isn't logically equivalent on all lines of the truth table for $(A \Rightarrow B)\Rightarrow C$ and $A \Rightarrow (B \Rightarrow C)$
+    \newline
+    \begin{displaymath}
+    \begin{array}{|c c c||c|c|}
+    A & B & C & (A \iff B)\iff C & A \iff (B \iff C)\\
+    \hline
+    T & T & T & T & T\\
+    T & F & T & F & F\\
+    F & T & T & F & F\\
+    F & F & T & T & T\\
+    T & T & F & F & F\\
+    T & F & F & T & T\\
+    F & T & F & T & T\\
+    F & F & F & F & F\\
+    \end{array}
+    \end{displaymath}
+    \newline $\iff$ is associative because it is logically equivalent on all lines of the truth table for $(A \iff B)\iff C$ and $A \iff (B \iff C)$
+    
+    \item  Suppose C is a tautology. What can you say about the following argument? \\ A \\ B \\ --- \\C
+    \\\\ If C is a tautology, it is always true and can never be false. So, there is no situation in which A and B are true and C is false. The argument is therefore always valid.
+    
+    \item Suppose that A and B are logically equivalent. What can you say about $A \lor B$?
+    \newline If A and B are logically equivalent to each other, then they will both be true in the same case. The disjunction of A and B will also be true in that case. That means $A \lor B$ is equivalent to $A \lor A$ which by repetition is $A$. It also means that $A \lor B$ is equivalent to $B \lor B$ which by repetition is $B$. This means that in this case, $A \lor B$ is logically equivalent to A, B.
+    
+    \item Suppose that A and B are not logically equivalent. What can you say about $A \lor B$?
+    \newline If A and B aren't logically equivalent to each other, A, B are not true in at least one case. This means that $A \lor B$ can either be a Tautology or a Contingency but it can never be a contradiction. For $A \lor B$ to be a contradiction, it will always have to be false but if A, B are not logically equivalent, there is at least one case where it is true.
+    
+    \item There are a number of languages with only two operators that are equivalent to truth-functional logic. Show that it is sufficient to have only the negation $(\neg)$ and the conditional $(\Rightarrow)$ by writing sentences (containing only the operators $\neg$ and $\Rightarrow$) that are logically equivalent to the following:
+    
+    \begin{itemize}
+        \item $A \lor B$
+        \item $A \land B$
+        \item $A \iff B$
+    \end{itemize}
+    \begin{displaymath}
+    \begin{array}{|c c ||c|c|}
+    A & B & A \lor B & \neg A \Rightarrow B\\
+    \hline
+    T & T & T & T\\
+    T & F & T & T\\
+    F & T & T & T\\
+    F & F & F & F\\
+    \end{array}
+    \end{displaymath}
+    \newline $A \lor B$ is logically equivalent to $\neg A \Rightarrow B$ as seen from all lines of the truth table.
+    
+    \begin{displaymath}
+    \begin{array}{|c c ||c|c|}
+    A & B & A \land B & \neg(A \Rightarrow \neg  B)\\
+    \hline
+    T & T & T & T\\
+    T & F & F & F\\
+    F & T & F & F\\
+    F & F & F & F\\
+    \end{array}
+    \end{displaymath}
+    \newline $A \land B$ is logically equivalent to $\neg (A \Rightarrow \neg B)$ as seen from all lines of the truth table.
+    
+    \begin{displaymath}
+    \begin{array}{|c c ||c|c|}
+    A & B & A \iff B & (\neg A \Rightarrow B) \Rightarrow \neg(A \Rightarrow \neg B) \\
+    \hline
+    T & T & T & T\\
+    T & F & F & F\\
+    F & T & F & F\\
+    F & F & T & T\\
+    \end{array}
+    \end{displaymath}
+    \newline $A \iff B$ is logically equivalent to $\neg(A \Rightarrow \neg B)\Rightarrow (\neg A \Rightarrow B)$ as seen from all lines of the truth table.
+    
+    \item Show that there is a language containing only two truth-functional operators, the negation $(\neg)$ and the disjunction $(\lor)$, that is equivalent to truth-functional logic.
+    \begin{displaymath}
+    \begin{array}{|c c ||c|c|}
+    A & B & A \land B & \neg(\neg A \lor \neg B)\\
+    \hline
+    T & T & T & T\\
+    T & F & F & F\\
+    F & T & F & F\\
+    F & F & F & F\\
+    \end{array}
+    \end{displaymath}
+    \newline $A \land B$ is logically equivalent to $\neg(\neg A \lor \neg B)$ as seen from all lines of the truth table.
+   
+    \begin{displaymath}
+    \begin{array}{|c c ||c|c|}
+    A & B & A \Rightarrow B & \neg A \lor B\\
+    \hline
+    T & T & T & T\\
+    T & F & F & F\\
+    F & T & T & T\\
+    F & F & T & T\\
+    \end{array}
+    \end{displaymath}
+    \newline $A \Rightarrow B$ is logically equivalent to $\neg A \lor B$ as seen from all lines of the truth table.
+    
+    \begin{displaymath}
+    \begin{array}{|c c ||c|c|}
+    A & B & A \iff B & \neg(\neg A \lor \neg B)\lor \neg(A \lor B)\\
+    \hline
+    T & T & T & T\\
+    T & F & F & F\\
+    F & T & F & F\\
+    F & F & T & T\\
+    \end{array}
+    \end{displaymath}
+    \newline $A \iff B$ is logically equivalent to $\neg(\neg A \lor \neg B)\lor \neg(A \lor B)$ as seen from all lines of the truth table.
+    \\\\ This proves that there is a language containing only the negation $(\neg)$ and the disjunction $(\lor)$ that is equivalent to the truth-functional logic.
+    \\\\ Note: This can also be proved through Natural Deduction but I decided to use truth tables to show the work.
+
+
+    
+\end{enumerate}
+
+
+
+
+\end{document}

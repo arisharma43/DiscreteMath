@@ -1,0 +1,310 @@
+\documentclass[]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\usepackage{ragged2e}
+\usepackage{stackengine}
+\usepackage{dirtytalk}
+\usepackage{graphicx}
+% \graphicspath{{./images/}}
+
+
+\hbadness=99999
+
+\date{\today}
+\author{ID: 14221}
+\title{Submission 2.2}
+
+\begin{document}
+
+\maketitle
+
+\begin{enumerate}
+    % \setcounter{enumi}{3}
+    \item a.
+    \newline $\exists x \exists y (x\geq y \land f(x)<f(y))$
+    \newline A curve f is called unfair if say an original grade, x is greater than or equal to another grade, y but the curved grade for x is lower than the curved grade for y.
+    \\\\ b.
+    \newline $\exists x \exists y(x>y \land f(x)\geq f(y))$
+    \newline A curve f is called not totally unfair if say an original grade, x is greater than another grade, y and the curved grade for x is greater than or equal to the curved score for y.
+     \newline
+    \\\\ c. An example of a curve that is unfair but not totally unfair would be if an original grade is equal to another grade, but the first grade is curved less than the other score. For example, if x and y both got a 80 on this submission but x got curved to 90 and y got curved to 100, the curve would be unfair but not totally unfair.
+    \\\\ d.
+    \newline A curve f is called progressive for any original grade x and y when x is less than y and the difference between the curved grade and original grade for a higher scorer is less than the difference between curved grade and original grade of someone who scored lower. Basically, the curve benefits the lower scorer by more points but overall raises the score of higher scorer where they still have an advantage.
+    \\\\ $\exists x \exists y(x<y \land f(x)-x \leq f(y)-y)$
+    \\\\ A curve f is called not progressive if fewer points are added to the curve for someone with a lower original score than someone with a higher original score with the curve benefiting the higher scorer more.
+    \\\\ e. Fair and not progressive
+    
+    \item The limit of a function, $f(x)$, at a point $c$ is $l$ if and only if:
+    \newline $\forall _{\epsilon>0} \exists_{ \delta>0}\forall _x((|x-c|<\delta)\Rightarrow(|f(x)-l|<\epsilon))$
+    \newline The limit of a function, $f(x)$, at a point $c$ is not $l$ if and only if:
+    \newline $\exists _{\epsilon>0} \forall _{\delta>0}\exists_{x}((|x-c|< \delta) \land (|f(x)-l|\geq \epsilon))$
+    \\\\ You can prove that the limit of $f$ at 0 is not 1 if and only if there is an x and the difference between x and 0 is less than $\delta$ and the difference between $f(x)$ and 1 is greater than or equal to $\epsilon$.
+    
+    \item A function, $f$, is continuous at a point $c$ if and only if:
+    \newline $\forall _{x_n \Rightarrow c}(f(x_n)\Rightarrow f(c))$
+    \newline A function, $f$, is discontinuous at a point $c$ if and only if:
+    \newline $\exists _{x_n \Rightarrow c}(f(x_n) \land \neg f(c))$
+    \\\\ You can prove that f is discontinuous at 0 if there exists a sequence of real numbers $x_n$ that converges to 0, but the sequence $f(x_n)$ does not converge to 1.
+
+    
+    \item Everything has a cause. Therefore something is the cause of everything. 
+    \newline a. 
+    \newline Cxy: x is the cause of y.
+    \\\\ $\forall_x \exists_y(C_{yx})$
+    \newline --------
+    \newline $\exists_y \forall_ x(C_{yx})$
+    \\\\b.
+    \newline Validity: Invalid
+    \newline Soundness: Unsound
+    \\\\c.
+    \newline Informal Proof:
+    \newline  
+    \newline Assume there exists an interpretation in which $\forall_x \exists_y(C_{yx})$ is true and $\exists_x \forall_ y(C_{yx})$ is false. Consider a universe of discourse (UD) where there must be two elements, call them a and b, such that Cxy = ${(a,b) (b,a)}$ which implies $C_{ab}$ and $C_{ba}$ are true but $C_{aa}$ and $C_{bb}$ are false. In this interpretation, the premise, $\forall_x\exists_y(C_{yx})$, is true and the conclusion, $\exists_x \forall_y(C_{yx})$ is false. This is a counterexample and therefore, this argument is invalid.
+    \begin{flushright}
+    $\square$
+    \end{flushright}
+    d.
+    \\\\ No proof by natural deduction since argument is invalid
+    \item  Fred hates everyone who hates Al. Al hates everyone. So Al and Fred hate each other.
+    \newline a.
+    \newline Hxy: x hates y
+    \newline f: Fred
+    \newline a: Al
+    \\\\ $\forall x (H_{xa}\Rightarrow H_{fx})$
+    \newline $\forall x(H_{ax})$
+    \newline --------
+    \newline $H_{af} \land H_{fa}$
+    \\\\b.
+    \newline Validity: Valid
+    \newline Soundness: Soundness hard to determine
+    \\\\d.
+    \\\\ Proof (Natural Deduction)
+    \begin{tabular}{c| c | c}
+        1 & $\forall_x (H_{xa}\Rightarrow H_{fx})$ & P1 \\
+        2 & $\forall_x(H_{ax})$ & P2 \\
+        3 & $H_{aa} \Rightarrow H_{fa}$ & UI(1) \\
+        4 & $H_{aa}$ & UI(2) \\
+        5 & $H_{fa}$ & MP(3,4) \\
+        6 & $H_{af}$ & UI(2) \\
+        7 & $H_{af}\land H_{fa}$ & Conj(5,6)
+    \end{tabular}
+    
+
+    \item All insects in this house are large and hostile. Some insects in this house are impervious to pesticides. Thus, some large, hostile insects are impervious to pesticides
+    \newline a.
+    \newline Lx: x is large
+    \newline Hx: x is hostile
+    \newline Px: x is impervious to pesticides
+    \newline x: insects in this house
+    \\\\ $\forall_x (L_x \land H_x)$
+    \newline $\exists_x (P_x)$
+    \newline --------
+    \newline $\exists_x (L_x \land H_x \land P_x)$
+    \\\\b.
+    \newline Validity: Valid
+    \newline Soundness: Soundness hard to determine
+    \\\\d.
+    \\\\ Proof (Natural Deduction)
+    \begin{tabular}{c| c | c}
+        1 & $\forall_x (L_x \land H_x)$ & P1 \\
+        2 & $\exists_x (P_x)$ & P2 \\
+        3 & $L_a\land H_a$ & UI(1) \\
+        4 & $P_a$ & EI(2) \\
+        5 & $L_a$ & Simp(3) \\
+        6 & $H_a$ & Simp(3) \\
+        7 & $L_a \land H_a \land P_a$ & Conj(4,5,6) \\
+        8 & $\exists_x(L_x \land H_x \land P_x)$ & EG(7) \\
+    \end{tabular}
+    
+    \item Some students cannot succeed at the university. All students who are bright and mature can succeed. It follows that some students are either not bright or immature.
+    \newline a.
+    \newline Ux: x can succeed at the university
+    \newline Bx: x is bright
+    \newline Mx: x is mature
+     \newline y: students 
+    \\\\ $\exists_y (\neg U_y)$
+    \newline $\forall_y ((B_y \land M_y)\Rightarrow U_y)$
+    \newline -----
+    \newline $\exists_y(\neg B_y \lor \neg M_y)$
+    \\\\b.
+    \newline Validity: Valid
+    \newline Soundness: Unsound
+    \\\\d.
+    \\\\ Proof (Natural Deduction)
+    \begin{tabular}{c| c | c}
+        1 & $\exists_y (\neg U_y)$ & P1 \\
+        2 & $\forall_y ((B_y \land M_y)\Rightarrow U_y)$ & P2 \\
+        3 & $\neg U_a$ & EI(1) \\
+        4 & $(B_a \land M_a)\Rightarrow U_a$ & UI(2) \\
+        5 & $\neg U_a \Rightarrow \neg(B_a \land M_a)$ & ContraPos(4) \\
+        6 & $\neg U_a \Rightarrow \neg B_a \lor \neg M_a$ & DeM(5) \\
+        7 & $\neg B_a \lor \neg M_a$ & MP(3,6) \\
+        8 & $\exists_y(\neg B_y \lor \neg M_y)$ & EG(7) \\
+    \end{tabular}
+    
+    \item There are at least 3 pigs. So there are at least two pigs.
+    \newline a.
+    \newline Px: x is a pig
+    \\\\ $\exists_x \exists_y \exists_z (x\neq y \land y\neq z \land x\neq z \land P_x \land P_y \land P_z)$
+    \newline --------
+    \newline $\exists x \exists y (x\neq y \land Px \land Py)$
+    \\\\b.
+    \newline Validity: Valid
+    \newline Soundness: Sound
+    \\\\d.
+    \\\\ Proof (Natural Deduction)
+    \begin{tabular}{c| c | c}
+        1 & $\exists_x \exists_y \exists_z (x\neq y \land y\neq z \land x\neq z \land P_x \land P_y \land P_z)$ & P1 \\
+        2 & $(a\neq b \land b\neq c \land a\neq c\land P_a \land P_b \land P_c)$ & EI(1) \\
+        3 & $P_a$ & Simp(2) \\
+        4 & $P_b$ & Simp(2) \\
+        5 & $a \neq b$ & Simp(2) \\
+        6 & $a \neq b \land P_a \land P_b$ & Conj(3,4,5) \\
+        7 & $\exists_x \exists_y(x\neq y \land P_x \land P_y)$ & EG(5) \\
+    \end{tabular}
+    
+    \item Popeye and Olive Oyl like each other since Popeye likes everyone who likes Olive Oyl, and Olive Oyl likes everyone.
+    \newline a.
+    \newline Lxy: x likes y
+    \newline P: Popeye
+    \newline O: Olive Oyl
+    \\\\ $\forall_x (L_{ox})$
+    \newline $\forall_x (L_{xo} \Rightarrow L_{px})$
+    \newline --------
+    \newline $L_{po} \land L_{op}$
+    \\\\b.
+    \newline Validity: Valid
+    \newline Soundness: Soundness hard to determine
+    \\\\d.
+    \\\\ Proof (Natural Deduction)
+    \begin{tabular}{c| c | c}
+        1 & $\forall_x (L_{ox})$ & P1 \\
+        2 & $\forall_x(L_{xo}\Rightarrow L_{px})$ & P2 \\
+        3 & $L_{oo}$ & UI(1) \\
+        4 & $L_{oo}\Rightarrow L_{po}$ & UI(2) \\
+        5 & $L_{po}$ & MP(3,4) \\
+        6 & $L_{op}$ & UI(2) \\
+        7 & $L_{po}\land L_{op}$ & Conj(5,6)
+    \end{tabular}
+
+    \item This argument is unsound, for its conclusion is false, and no sound argument has a false conclusion.
+    \newline a.
+    \newline Sx: x is sound
+    \newline Cx: conclusion of x is true
+    \newline t: this argument
+    \\\\ $\neg Ct$
+    \newline $\forall x (Sx \Rightarrow Cx)$
+    \newline --------
+    \newline $\neg St$
+    \\\\b.
+    \newline Validity: Valid
+    \newline Soundness: Soundness hard to determine
+    \\\\c.
+    \newline Informal Proof:
+    \newline Assume there is an interpretation where the premises, $\neg Ct$ and $\forall x(Sx \Rightarrow Cx)$ are true but the conclusion, $\neg St$ is false that is $St$ is true. For the second premise, the universe of discourse is for all x, so for any case where $Sx$ is true, $Cx$ is also true. However, this contradicts the first premise, so there is no CE and the argument is valid.
+    \begin{flushright}
+    $\square$
+    \end{flushright}
+    d.
+    \\\\ Proof (Natural Deduction)
+    \begin{tabular}{c| c | c}
+        1 & $\neg C_t$ & P1 \\
+        2 & $\forall_x (S_x \Rightarrow C_x)$ & P2 \\
+        3 & $S_t \Rightarrow C_t$ & UI(2) \\
+        4 & $\neg C_t \Rightarrow \neg S_t$ & ContraPos(3) \\
+        5 & $\neg S_t$ & MP(1,4) \\
+    \end{tabular}
+
+    \item Everyone likes Mandy. Mandy likes nobody but Andy. Therefore Mandy and Andy are the same person.
+    \newline a.
+    \newline Lxy: x likes y
+    \newline m: Mandy
+    \newline a: Andy
+    \\\\ $\forall x (Lxm$)
+    \newline $\neg \exists_x(L_{mx} \land x\neq a)$
+    \newline --------
+    \newline $m=a$
+    \\\\b.
+    \newline Validity: Valid
+    \newline Soundness: Soundness hard to determine
+    \\\\d.
+    \\\\ Proof (Natural Deduction)
+    \begin{tabular}{c| c | c}
+        1 & $\forall_x (L_{xm})$ & P1 \\
+        2 & $\neg \exists_x (L_{mx} \land x \neq a)$ & P2 \\
+        3 & $L_{mm}$ & UI(1) \\
+        4 & $\forall_x(\neg(L_{mx} \land x \neq a))$ & QEx(2) \\
+        5 & $\neg(L_{mm} \land m \neq a)$ & UI(4) \\
+        6 & $\neg L_{mm} \lor m=a$ & DeM(5) \\
+        7 & $m=a$ & DS(6,3) \\
+    \end{tabular}
+    
+    \item Everyone is afraid of Mr. Hyde. Mr. Hyde is afraid only of Dr. Jekyll. Therefore, Dr. Jekyll is Mr. Hyde.
+    \newline a.
+    \newline Axy: x is afraid of y
+    \newline h: Mr. Hyde
+    \newline j: Dr. Jekyll
+    \\\\ $\forall x(Axh)$
+    \newline $\neg \exists_x(A_{hx}\land x\neq j)$
+    \newline --------
+    \newline $h=j$
+    \\\\b.
+    \newline Validity: Valid
+    \newline Soundness: Soundness hard to determine
+    \\\\d.
+    \\\\ Proof (Natural Deduction)
+    \begin{tabular}{c| c | c}
+        1 & $\forall_x A_{xh}$ & P1 \\
+        2 & $\neg \exists_x (A_{hx} \land x \neq j)$ & P2 \\
+        3 & $A_{hh}$ & UI(1) \\
+        4 & $\forall_x(\neg(A_{hx} \land x \neq j))$ & QEx(2) \\
+        5 & $\neg(A_{hh} \land h \neq j)$ & UI(4) \\
+        6 & $\neg A_{hh} \lor h=j$ & DeM(5) \\
+        7 & $h=j$ & DS(6,3) \\
+    \end{tabular}
+    
+    \item $\forall x(Fx\Rightarrow Gx)$
+    \newline $\forall x(Fx\Rightarrow Hx)$
+    \newline --------
+    \newline $\forall x(Gx\Rightarrow Hx)$
+    \\\\a.
+    \newline Validity: Invalid
+    \\\\ b.
+    \newline Informal Proof:
+    \newline Assume there exists an interpretation in which the premises, $\forall x(Fx\Rightarrow Gx)$ and $\forall x(Fx\Rightarrow Hx)$, are true and the conclusion, $\forall x(Gx\Rightarrow Hx)$ is false. This means there must be an element in the UD, call it a, such that Ga is true, Ha is false. In this interpretation, if Ga is true then Fa has to be true for the first premise to be true. If Fa is true then for $Fx \Rightarrow Hx$ to be true, Ha must be true. Thus, the conclusion, $\forall x (Gx \Rightarrow Hx)$ will be false. This is a counterexample and the argument is invalid.
+    \begin{flushright}
+    $\square$
+    \end{flushright}
+    
+    \item $\forall x(Fx\Rightarrow Gx)$
+    \newline --------
+    \newline $\forall x(\neg Gx \Rightarrow \neg Fx)$
+    \\\\a.
+    \newline Validity: Valid
+    \\\\ b.
+    \newline Informal Proof:
+    \newline Assume there exists an interpretation in which $\forall x(Fx \Rightarrow Gx)$ is true and $\forall x (\neg Fx \Rightarrow \neg Fx)$ is false. This means that there must be some element in the UD, call it a, such that $\neg Ga$ is true but $\neg Fa$ is false. That is, Fa is true but Ga is false, or $Fa \Rightarrow Ga$ is false. $\longrightarrow \longleftarrow$ Thus, no CE and the argument is valid.
+    \begin{flushright}
+    $\square$
+    \end{flushright}
+    
+    \item $\neg \exists x (Fx \land Gx)$
+    \newline $\forall x (Gx \Rightarrow Hx)$
+    \newline --------
+    \newline $\forall x (Fx \Rightarrow \neg Hx)$
+    \\\\a.
+    \newline Validity: Invalid
+    \\\\ b.
+    \newline Informal Proof:
+    \newline Assume there exists an interpretation in which the premises, $\neg \exists x (Fx \land Gx)$ and $\forall x (Gx \Rightarrow Hx)$, are true and the conclusion, $\forall x (Fx \Rightarrow \neg Hx)$, is false. This means that there must be some element in the UD, call it a, such that $Fa$ is true and $\neg Ha$ is false, so $Ha$ is true. For second premise to be true, $Ga$ needs to be true. But, for the first premise to be true, $Ga$ must be false. The conclusion, $\forall x (Fx \Rightarrow \neg Hx)$, will be false and therefore there is a counterexample and the argument is invalid.
+    \begin{flushright}
+    $\square$
+    \end{flushright}
+    
+\end{enumerate}
+
+
+
+
+\end{document}

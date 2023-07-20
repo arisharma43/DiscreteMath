@@ -1,0 +1,501 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\usepackage{ragged2e}
+\usepackage{stackengine}
+\usepackage{dirtytalk}
+\usepackage{graphicx}
+\graphicspath{{./images/}}
+
+
+\hbadness=99999
+
+\date{\today}
+\author{ID:14221}
+\title{Submission 1.1}
+
+\begin{document}
+
+\maketitle
+
+\subsection{1}
+Knaves always lie, knights always tell the truth, and in Transylvania, where everybody is one or the other (but you can’t tell which by looking), you encounter two people, one of whom says, “He’s a knight or I’m a knave.” What are they?
+\\
+A:He is a knight
+\\
+B:I'm a knave
+\newline
+If the speaker is a knave,  he's lying. In that case, if the other person was a knight, they would've called him a knave. Since the speaker calls the other person a knight and he can only do that when he isn't lying, the solution is that \textbf{both are knights.} 
+
+\subsection{2-12}
+
+\begin{enumerate}
+    \setcounter{enumi}{1}
+    \item a.
+    \newline He must have gone to King's Pyland or to Mapleton.
+    \newline
+    He is not at King's Pyland.
+    \newline
+    ---
+    \newline
+    He is at Mapleton.
+    \\\\b.
+    Validity: Valid
+    \newline
+    Soundness: Sound
+    \\\\c.
+    \newline K: He's at King's Pyland
+    \newline M: He's at Mapleton
+    \\\\ K $\lor$ M
+    \newline $\neg$ K
+    \newline ---
+    \newline M
+    \\\\e.
+    \newline Proof (Contradiction):
+    \newline Assume there is a case in which the premises-K $\lor$ M and $\neg$ K- are true but the conclusion, M, is false. If $\neg$ K is true, K is false. But M (false)and K (false) implies K$\lor$M is false. $\to\gets$ Thus no CE exists and argument is valid.
+    \begin{flushright}
+    $\square$
+    \end{flushright}
+    
+    
+    
+
+    \item a.
+    \newline The patient will die unless we operate.
+    \newline
+    We will operate.
+    \newline
+    ---
+    \newline
+    The patient will not die.
+    \\\\b.
+    Validity: Invalid
+    \newline
+    Soundness: Not Sound
+    \\\\c.
+    \newline D: The patient will die
+    \newline O: We will operate
+    \\\\ $\neg$ O $\Rightarrow$ D
+    \newline O
+    \newline ---
+    \newline $\neg$ D
+    \\\\d.
+    \begin{displaymath}
+    \begin{array}{|c c|c|c|c|}
+% |c c|c| means that there are three columns in the table and
+% a vertical bar ’|’ will be printed on the left and right borders,
+% and between the second and the third columns.
+% The letter ’c’ means the value will be centered within the column,
+% letter ’l’, left-aligned, and ’r’, right-aligned.
+    D & O & \neg O \Rightarrow D & O & \neg D\\ % Use & to separate the columns
+    \hline % Put a horizontal line between the table header and the rest.
+    T & T & T & T & F\\
+    T & F & T & F & F\\
+    F & T & T & T & T\\
+    F & F & F & F & T\\
+    \end{array}
+    \end{displaymath}
+    \\The first row proves that the argument is invalid because the premises are true and the conclusion is false.
+    \\\\e.
+    \newline Proof (Conditional):
+    \newline Consider the case in which D is true and O is true.  In this case, both premises - $\neg O \Rightarrow D$ and O - are true but the conclusion, $\neg D$, is false. This is a CE and the argument is invalid.
+    \begin{flushright}
+    $\square$
+    \end{flushright}
+    
+    \item a.
+    \newline If I'm right, then I'm a fool.
+    \newline
+    If I'm a fool, I'm not right.
+    \newline
+    ---
+    \newline
+    I'm no fool.
+    \\\\b.
+    Validity: Invalid
+    \newline
+    Soundness: Not sound
+    \\\\c.
+    \newline R: I'm right
+    \newline F: I'm a fool
+    \\\\ R $\Rightarrow$ F
+    \newline F $\Rightarrow \neg$ R
+    \newline ---
+    \newline $\neg$ F
+    \\\\e.
+    \newline Proof (Conditional):
+    \newline Consider the case in which F is true and R is false. In this case, both premises - $R \Rightarrow F$ and $F \Rightarrow \neg R $ - are true but the conclusion, $\neg F$, is false. This is a CE and the argument is invalid.
+    \begin{flushright}
+    $\square$
+    \end{flushright}
+    
+    \item a.
+    \newline If I'm right, then I'm a fool.
+    \newline
+    If I'm a fool, I'm not right.
+    \newline
+    ---
+    \newline
+    I'm not right.
+    \\\\b.
+    Validity: Valid
+    \newline
+    Soundness: Soundness hard to determine
+    \\\\c.
+    \newline R: I'm right
+    \newline F: I'm a fool
+    \\\\ R $\Rightarrow$ F
+    \newline F $\Rightarrow \neg$ R
+    \newline ---
+    \newline $\neg$ R
+    \\\\d.
+    \begin{displaymath}
+    \begin{array}{|c c|c|c|c|}
+    % |c c|c| means that there are three columns in the table and
+    % a vertical bar ’|’ will be printed on the left and right borders,
+    % and between the second and the third columns.
+    % The letter ’c’ means the value will be centered within the column,
+    % letter ’l’, left-aligned, and ’r’, right-aligned.
+    R & F & R \Rightarrow F & F \Rightarrow \neg R & \neg R\\ % Use & to separate the columns
+    \hline % Put a horizontal line between the table header and the rest.
+    T & T & T & F & F\\
+    T & F & F & T & F\\
+    F & T & T & T & T\\
+    F & F & T & T & T\\
+    \end{array}
+    \end{displaymath}
+    \\The third and fourth row proves that the argument is valid because the premises are true and the conclusion is true.
+    \\\\e.
+    \newline Proof (Contradiction):
+    \newline Assume there is a case in which the premises-$R \Rightarrow F$ and $F \Rightarrow \neg R$- are true but the conclusion, $\neg R$, is false. If $\neg R$ is false, R is true. If R is true, then F has to be true for the first premise -$R \Rightarrow F$- to be true. But F is true and $F \Rightarrow \neg R$ is true, implies $\neg R$ is true. $\to\gets$ Thus no CE exists and argument is valid.
+    \begin{flushright}
+    $\square$
+    \end{flushright}
+    
+    \item a.
+    \newline If Einstein's theory of relativity is correct, light bends in the vicinity of the sun.
+    \newline
+    Light does indeed bend at the vicinity of the sun.
+    \newline
+    ---
+    \newline
+    Einstein's theory of relativity is correct.
+    \\\\b.
+    Validity: Invalid
+    \newline
+    Soundness: Not sound
+    \\\\c.
+    \newline E: Einstein's theory of relativity is correct
+    \newline L: Light bends in the vicinity of the sun
+    \\\\ E $\Rightarrow$ L
+    \newline L
+    \newline ---
+    \newline E
+    \\\\e.
+    \newline Proof (Conditional):
+    \newline Consider the case in which E is false and L is true. In this case, both premises - $E \Rightarrow L$ and $L$ - are true but the conclusion, $E$, is false. This is a CE and the argument is invalid.
+    \begin{flushright}
+    $\square$
+    \end{flushright}
+    
+    \item a.
+    \newline Congress will agree to the cut only if the President announces his support first.
+    \newline
+    The President won't announce his support first
+    \newline
+    ---
+    \newline
+    Congress won't agree to the cut.
+    \\\\b.
+    Validity: Valid
+    \newline
+    Soundness: Soundness hard to determine
+    \\\\c.
+    \newline C: Congress will agree to the cut
+    \newline P: The President will announce his support first
+    \\\\ C $\Rightarrow$ P
+    \newline $\neg$ P
+    \newline ---
+    \newline $\neg$ C
+    \\\\d.
+    \begin{displaymath}
+    \begin{array}{|c c|c|c|c|}
+    % |c c|c| means that there are three columns in the table and
+    % a vertical bar ’|’ will be printed on the left and right borders,
+    % and between the second and the third columns.
+    % The letter ’c’ means the value will be centered within the column,
+    % letter ’l’, left-aligned, and ’r’, right-aligned.
+    C & P & C \Rightarrow P & \neg P & \neg \textbf{C}\\ % Use & to separate the columns
+    \hline % Put a horizontal line between the table header and the rest.
+    T & T & T & F & \textbf{F}\\
+    T & F & F & T & \textbf{F}\\
+    F & T & T & F & \textbf{T}\\
+    F & F & T & T & \textbf{T}\\
+    \end{array}
+    \end{displaymath}
+    \\The fourth row proves that the argument is valid because the premises are true and the conclusion is true.
+    \\\\e.
+    \newline Proof (Conditional):
+    \newline Consider the case in which C is false and P is false. In this case, both premises - $C \Rightarrow P$ and $\neg P$ - are true. In order for the first premise to be true, C must be false so that the conclusion, $\neg C$, is true. Thus, no CE and the argument is valid.
+    \begin{flushright}
+    $\square$
+    \end{flushright}
+    
+    \item a.
+    \newline If you are ambitious, you'll never achieve all your goals.
+    \newline
+    Life has meaning only if you have ambition.
+    \newline
+    ---
+    \newline
+    If you achieve all your goals, life has no meaning.
+    \\\\b.
+    Validity: Valid
+    \newline
+    Soundness: Soundness hard to determine
+    \\\\c.
+    \newline A: You are ambitious
+    \newline G: You achieve all your goals
+    \newline M: Life has meaning
+    \\\\ A $\Rightarrow \neg$ G
+    \newline A $\Rightarrow$ M
+    \newline ---
+    \newline G $\Rightarrow \neg$ M
+    
+    
+    \item a.
+    \newline If Adams wins the election, Brown will retire to private life.
+    \newline
+    If Brown dies before the election, Adams will win it.
+    \newline
+    ---
+    \newline
+    If Brown dies before the election, he will retire to private life.
+    \\\\b.
+    Validity: Valid
+    \newline
+    Soundness: Not sound
+    \\\\c.
+    \newline A: Adam wins the election
+    \newline B: Brown will retire to private life
+    \newline D: Brown dies before the election
+    \\\\ A $\Rightarrow$ B
+    \newline D $\Rightarrow$ A
+    \newline ---
+    \newline D $\Rightarrow $ B
+    \\\\d.
+    \begin{displaymath}
+    \begin{array}{|c c c|c|c|c|}
+    % |c c|c| means that there are three columns in the table and
+    % a vertical bar ’|’ will be printed on the left and right borders,
+    % and between the second and the third columns.
+    % The letter ’c’ means the value will be centered within the column,
+    % letter ’l’, left-aligned, and ’r’, right-aligned.
+    A & B & D & A \Rightarrow B & D \Rightarrow A & D \Rightarrow B\\ % Use & to separate the columns
+    \hline % Put a horizontal line between the table header and the rest.
+    T & T & T & T & T & \textbf{T}\\
+    T & F & T & F & T & \textbf{F}\\
+    F & T & T & T & F & \textbf{T}\\
+    F & F & T & T & F & \textbf{F}\\
+    T & T & F & T & T & \textbf{T}\\
+    T & F & F & F & T & \textbf{T}\\
+    F & T & F & T & T & \textbf{T}\\
+    F & F & F & T & T & \textbf{T}\\
+    \end{array}
+    \end{displaymath}
+    \\All the rows with premises that are true and the conclusions is true prove that the argument is valid.
+    
+    \item a.
+    \newline Either Holmes is right and the vile Moriarty is guilty or he is wrong and the scurrilous Thin did the job.
+    \newline
+    
+    Those scoundrels are either both guilty or both innocent.
+    \newline
+    Holmes is right.
+    \newline
+    ---
+    \newline
+    Thin is guilty.
+    \\\\b.
+    Validity: Valid
+    \newline
+    Soundness: Soundness hard to determine
+    \\\\c.
+    \newline H: Holmes is right
+    \newline M: The vile Moriarty is guilty
+    \newline D: The scurrilous Thin is guilty
+    \\\\ (H $\land$ M) $\lor$ ($\neg$ H $\land$ D)
+    \newline (M $\land$ D) $\lor$ ($\neg$ M $\land$  $\neg$ D)
+    \newline H
+    \newline ---
+    \newline D
+    
+    \item a.
+    \newline Mittens meows exactly when she is hungry.
+    \newline
+    Mittens is meowing, but she isn't hungry.
+    \newline
+    ---
+    \newline
+    The end of the Earth is at hand.
+    \\\\b.
+    Validity: Valid
+    \newline
+    Soundness: Not sound
+    \\\\c.
+    \newline M: Mittens meows
+    \newline H: She is hungry
+    \newline E: The end of the Earth is at hand 
+    \\\\ H $\iff$ M
+    \newline M $\land \neg$ H
+    \newline ---
+    \newline E
+    \\\\d.
+    \begin{displaymath}
+    \begin{array}{|c c c|c|c|c|}
+    % |c c|c| means that there are three columns in the table and
+    % a vertical bar ’|’ will be printed on the left and right borders,
+    % and between the second and the third columns.
+    % The letter ’c’ means the value will be centered within the column,
+    % letter ’l’, left-aligned, and ’r’, right-aligned.
+    M & H & E & H \iff M & M \land \neg H & \textbf{E}\\ % Use & to separate the columns
+    \hline % Put a horizontal line between the table header and the rest.
+    T & T & T & T & F & \textbf{T}\\
+    T & F & T & F & T & \textbf{T}\\
+    F & T & T & F & F & \textbf{T}\\
+    F & F & T & T & F & \textbf{T}\\
+    T & T & F & T & F & \textbf{F}\\
+    T & F & F & F & T & \textbf{F}\\
+    F & T & F & F & F & \textbf{F}\\
+    F & F & F & T & F & \textbf{F}\\
+    \end{array}
+    \end{displaymath}
+    \\There is never a case where the premises can be true so the argument is valid.
+    
+    \item a.
+    \newline
+    God is omnipotent if and only if He can do everything.
+    \newline
+    If He can't make a stone so heavy that He can't lift it, then he can't do everything.    
+    \newline
+    If He can make a stone so heavy that He can't lift it, He can't do everything.
+    \newline
+    ---
+    \newline
+    Either God is not omnipotent or God does not exist.
+    \\\\b.
+    Validity: Valid
+    \newline
+    Soundness: Soundness hard to determine
+    \\\\c.
+    \newline S: He can make a stone so heavy that He can't lift it
+    \newline D: He can do everything
+    \newline G: God is omnipotent
+    \newline E: God exists
+    \\\\ G $\iff$ D
+    \newline $\neg$ S $\Rightarrow \neg$ D
+    \newline S $\Rightarrow \neg$ D
+    \newline ---
+    \newline $\neg$ G $\lor$ $\neg$ E
+    \\\\e.
+    \newline Proof (Conditional):
+    \newline Suppose the premises-G $\iff$ D,$\neg$ S $\Rightarrow \neg$ D,S $\Rightarrow \neg$ D-are true. Since \\ $\neg$ S $\Rightarrow \neg$ D and S $\Rightarrow \neg$ D are true, $\neg D$ must be true, and D must be false. Since $G \iff D$ is true, G must be false. $\neg G$ is true so the conclusion $\neg G \lor \neg E$ will always be true. Therefore, the conclusion is always true when the premises are true and the argument is valid.
+    \begin{flushright}
+    $\square$
+    \end{flushright}
+    
+    \item 
+        \begin{tabular}{ c| c |c }
+            1 & 2 & 3 \\
+            \hline
+            4 & X & 6 \\
+            \hline
+            7 & 8 & 9
+        \end{tabular}
+        
+        
+        \begin{tabular}{ c| c |c }
+            1 & 2 & 3 \\
+            \hline
+            O & X & 6 \\
+            \hline
+            7 & 8 & 9
+        \end{tabular}
+        
+        \begin{tabular}{ c| c |c }
+            1 & 2 & 3 \\
+            \hline
+            O & X & 6 \\
+            \hline
+            X & 8 & 9
+        \end{tabular}    
+        
+        \begin{tabular}{ c| c |c }
+            1 & 2 & O \\
+            \hline
+            O & X & 6 \\
+            \hline
+            X & 8 & 9
+        \end{tabular}    
+        
+        \begin{tabular}{ c| c |c }
+            1 & X & O \\
+            \hline
+            O & X & 6 \\
+            \hline
+            X & 8 & 9
+        \end{tabular} 
+        
+        \begin{tabular}{ c| c |c }
+            1 & X & O \\
+            \hline
+            O & X & 6 \\
+            \hline
+            X & O & 9
+        \end{tabular}    
+        
+        \begin{tabular}{ c| c |c }
+            X & X & O \\
+            \hline
+            O & X & 6 \\
+            \hline
+            X & O & 9
+        \end{tabular}
+        
+        \begin{tabular}{ c| c |c }
+            X & X & O \\
+            \hline
+            O & X & 6 \\
+            \hline
+            X & O & O
+        \end{tabular}
+        
+    A win isn't guaranteed from the cases shown above. 
+    
+
+    
+    \item True because if an argument is valid, adding  premises can't change it. If an argument is valid and adding a new true premise can't make a counterexample that makes the argument invalid.
+    
+    \item True, even though you may remove premises, the counterexample still exists which prevents an invalid argument from becoming valid.
+    
+    \item Suppose $(A \land B)\Rightarrow C$ is contingent. Since the sentence $(A \land B) \Rightarrow C$ isn't a tautology, it is false for two cases. Since this is a conditional, there is a case where C is false but A and B are true. In this case, the premises will be true but the conclusion false making the argument invalid. 
+    
+    \item If the argument is valid, the premises- A, B -and the conclusion- C -is true or A, B are contradictions and can never both be true. So when A, B, and C are true, $(A\land B)\Rightarrow C$ is true. If the premises are contradictions, then ($A\land B$) is false, and $(A\land B)\Rightarrow C$ will still be true.
+    
+    \item False, an argument with contradictory premises will be valid, no matter the conclusion. The condition of invalidity is defined as all the premises being true while the conclusion is false.  The premises cannot all be true while the conclusion is false. Since the argument cannot be invalid, it must be valid. 
+    
+    \item False. Inconsistency means that not all sentences are true, there is always at least one that is false. So $A \land B \land C$ will always be false.
+    
+    \item True. Since an argument with contradicting premises and a true conclusion is valid, the conclusion itself can be contradictory. For example, premises can be \say{The sky is blue} and \say{The sky is black} and the conclusion could be \say{The sky is blue and black}. This is contradictory but valid.
+    
+\end{enumerate}
+
+
+
+
+\end{document}

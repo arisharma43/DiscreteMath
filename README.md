@@ -2,7 +2,7 @@
 
 ### Textbook and submissions from my high school Discrete Math class
 
-#### All submissions were completed in latex. Submissions 1.1 to 2.2 were done from the Logic Textbook pdf (included lessons and questions from a variety of sources) and Munkres 1.1 to 1.3 was completed from the Munkres Topology Textbook
+#### All submissions were completed in Latex. Submissions 1.1 to 2.2 were done from the Logic Textbook pdf (included lessons and questions from a variety of sources) and Munkres 1.1 to 1.3 was completed from the Munkres Topology Textbook
 
 - Submission 1.1: Truth-Functional Logic Pt 1 (Informal Proof, Conditional Proof, and Proof by Contradiction, Truth Tables)
 - Submission 1.2: Truth-Functional Logic Pt 2 (Formal Proof, Truth Tables, and Natural Deduction)
